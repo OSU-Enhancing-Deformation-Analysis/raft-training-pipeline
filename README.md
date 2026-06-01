@@ -6,9 +6,9 @@ The full RAFT model implementation is maintained by research partner Brock Clout
 
 ## Result
 
-![Four-panel comparison for the hero SEM frame pair: reference frame, deformed frame, DICe ground-truth horizontal displacement field, and the RAFT model prediction. The prediction visually matches the ground truth.](image/SEM.svg)
+![Four-panel comparison of an SEM frame pair: reference frame, deformed frame, DICe ground-truth horizontal displacement field, and the RAFT model prediction. The prediction visually matches the ground truth.](image/SEM.svg)
 
-*Predicted displacement field (right) against the DICe ground truth (third panel) for the hero frame pair. Qualitatively identical across the reliable interior.*
+*Predicted displacement field (right) against the DICe ground truth (third panel) for this frame pair. Qualitatively identical across the reliable interior.*
 
 ## Contents
 
@@ -17,7 +17,7 @@ The full RAFT model implementation is maintained by research partner Brock Clout
 - `raft_model.py` — RAFT model wrapper around torchvision's `raft_large`.
 - `tile_dataset.py` — PyTorch Dataset for 128×128 training tiles.
 - `train.sbatch` — Base SLURM submission script (any partition).
-- `train_systematic.sbatch` — Long-running variant for the systematic-coverage dataset (20 h, `dgxh` H100 partition).
+- `train_systematic.sbatch` — Long-running variant for the systematic-coverage dataset.
 - `setup_hpc.sh` — One-shot HPC environment setup script.
 - `requirements.txt` — Python dependencies.
 - `README_HPC.md` — HPC-specific setup and usage notes.
@@ -31,7 +31,7 @@ The full RAFT model implementation is maintained by research partner Brock Clout
 - `plot_systematic_schema.py` — Renders the systematic-tile coverage diagram (anchored last-tile placement with edge trim).
 
 ### `checkpoints/` — Trained model checkpoint
-- `best.pt` — Best validation checkpoint from Run C (`full_C_systematic_200`, 200 epochs, `dgxh` H100, SLURM job 20316680). Best epoch 119; validation loss 0.0364; mean EPE 0.024 px on the `f0060_vs_f0090` hero pair.
+- `best.pt` — Best validation checkpoint from Run C (`full_C_systematic_200`, 200 epochs, `dgxh` H100, SLURM job 20316680). Best epoch 119; validation loss 0.0364; mean EPE 0.024 px on the `f0060_vs_f0090` pair.
 
 ### `logs/` — Training run log
 - `slurm-full_C_systematic_200-20316680.out` — SLURM stdout from the final training run.
