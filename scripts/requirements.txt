@@ -1,0 +1,8 @@
+# Install PyTorch matching the HPC node's CUDA version FIRST (see setup_hpc.sh).
+# These are the supporting packages we depend on.
+numpy>=1.26
+matplotlib>=3.8
+pillow>=10
+PyYAML>=6
+tqdm>=4.65
+wandb>=0.16
